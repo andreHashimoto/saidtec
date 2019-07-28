@@ -1,0 +1,84 @@
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+    <h1 class="h2">Cadastro de Cliente</h1>
+</div>
+<!-- Default form register -->
+<div *ngIf="!isLoading" class="row">
+    <div class="col-8">
+        <form class="text-center border border-light p-5" [formGroup]="clientForm" (ngSubmit)="onSubmit()">
+
+            <!-- Nome -->
+            <input type="text" formControlName="nome" class="form-control mb-4" placeholder="Nome">
+
+            <div class="form-row mb-4">
+                <div class="col">
+                    <!-- CEP -->
+                    <input type="text" formControlName="cep" class="form-control" placeholder="CEP"
+                        (blur)="onBlurCEP($event.target.value)" mask="00000-000">
+                </div>
+                <div class="col">
+                    <!-- Estado -->
+                    <input type="text" formControlName="estado" class="form-control" placeholder="Estado">
+                </div>
+                <div class="col">
+                    <!-- Cidade -->
+                    <input type="text" formControlName="cidade" class="form-control" placeholder="Cidade">
+                </div>
+            </div>
+
+            <div class="form-row mb-4">
+                <div class="col">
+                    <!-- Municipio -->
+                    <input type="text" formControlName="municipio" class="form-control" placeholder="Município">
+                </div>
+                <div class="col">
+                    <!-- Bairro -->
+                    <input type="text" formControlName="bairro" class="form-control" placeholder="Bairro">
+                </div>
+            </div>
+
+            <!--Endereco -->
+            <input type="email" formControlName="endereco" class="form-control mb-4" placeholder="Endereço">
+
+            <div class="form-row mb-4">
+                <div class="col">
+                    <!-- CNPJ/CPF -->
+                    <input type="text" formControlName="cnpjcpf" class="form-control" placeholder="CNPJ/CPF"
+                        mask="00.000.000/0000-00">
+                </div>
+                <div class="col">
+                    <!-- Inscricao Estado -->
+                    <input type="text" formControlName="inscricaoEstadual" class="form-control"
+                        placeholder="Inscrição Estadual" mask="0000.0000.0000.0000">
+                </div>
+            </div>
+
+            <div class="form-row mb-4">
+                <div class="col">
+                    <!-- Condicao de pagamento -->
+                    <input type="text" formControlName="pagamento" class="form-control"
+                        placeholder="Condição de pagamento">
+                </div>
+                <div class="col">
+                    <!-- Local para cobrança -->
+                    <input type="text" formControlName="retirada" class="form-control"
+                        placeholder="Local para cobrança">
+                </div>
+            </div>
+
+
+            <!-- Sign up button -->
+            <button class="btn-lg btn-info"
+                type="submit">{{ isEdit ? 'Atualizar Cliente' : 'Cadastrar Cliente'}}</button>
+
+        </form>
+        <!-- Default form register -->
+
+    </div>
+</div>
+<div *ngIf="isLoading" class="row">
+    <div class="col-8 text-center">
+        <div class="spinner-border text-primary" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+</div>

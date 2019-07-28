@@ -1,0 +1,13 @@
+input.form-control {
+    font-weight: bold
+}
+
+input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #555;
+    font-weight: 200
+}
+
+.spinner-border {
+    width: 4rem;
+    height: 4rem;
+}

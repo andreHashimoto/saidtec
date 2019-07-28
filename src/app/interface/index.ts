@@ -1,0 +1,1 @@
+export { IViaCEP } from './via-cep.interface'

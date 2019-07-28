@@ -1,0 +1,27 @@
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+    <h1 class="h2">Lista de Clientes</h1>
+</div>
+<div class="row">
+    <div class="col-8">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                <th scope="col">Nome</th>
+                <th scope="col">CNPJ/CPF</th>
+                <th scope="col">Inscr. Est.</th>
+                <th scope="col">Alterar</th>
+                <th scope="col">Deletar</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let cliente of clientes">
+                    <td>{{ cliente.nome }}</td>
+                    <td>{{ cliente.cnpjcpf }}</td>
+                    <td>{{ cliente.inscricaoEstadual }}</td>
+                    <td><i class="fa fa-edit fa-2x" (click)="editCliente(cliente.id)"></i></td>
+                    <td><i class="fa fa-trash fa-2x" (click)="removeCliente(cliente.id)"></i></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

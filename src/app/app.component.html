@@ -1,0 +1,33 @@
+<div class="container-fluid">
+  <div class="row">
+    <nav class="col-md-2 d-none d-md-block sidebar">
+      <div class="sidebar-sticky">
+        <img src="../assets/saidtec.jpg">
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/impressao-nota" routerLinkActive="active">
+              <i class="fa fa-print"></i>
+              Impressão de Nota
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/cadastro-cliente" routerLinkActive="active">
+              <i class="fa fa-address-card"></i>
+              Cadastro de Clientes
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/lista-cliente" routerLinkActive="active">
+              <i class="fa fa-align-justify"></i>
+              Lista de Clientes
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <main class="col-md-9 ml-sm-auto col-lg-10 px-4">
+        <router-outlet></router-outlet>
+    </main>
+  </div>
+</div>
