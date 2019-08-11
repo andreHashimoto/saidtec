@@ -20,7 +20,7 @@ export class ListaClienteComponent implements OnInit {
   }
 
   getClientes() {
-    this.clienteService.getClientes().subscribe((clientes: ICliente[]) => {
+    this.clienteService.getClientes().subscribe((clientes: any) => {
       this.clientes = clientes;
     })
   }
@@ -30,7 +30,7 @@ export class ListaClienteComponent implements OnInit {
   }
 
   removeCliente(id: number) {
-    this.clienteService.deleteCliente(id).subscribe(() => {
+    this.clienteService.deleteCliente(id).then(() => {
       this.getClientes();
     })
   }

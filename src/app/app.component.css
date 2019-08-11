@@ -65,3 +65,7 @@ body {
   .sidebar .nav-link.active .feather {
     color: inherit;
   }
+
+  .logout {
+    cursor: pointer;
+  }

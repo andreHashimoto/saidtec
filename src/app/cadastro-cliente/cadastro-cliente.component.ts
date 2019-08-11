@@ -58,7 +58,7 @@ export class CadastroClienteComponent implements OnInit {
   }
 
   getCliente(id: number) {
-    this.clienteService.getClienteById(id).subscribe((cliente: ICliente) => {
+    this.clienteService.getClienteById(id).subscribe((cliente) => {
       this.clientForm.patchValue({
         id: cliente.id,
         nome: cliente.nome,
@@ -78,9 +78,6 @@ export class CadastroClienteComponent implements OnInit {
   }
 
   onSubmit() {
-    // if (this.clientForm.invalid) {
-    //     return;
-    // }
     this.isLoading = true;
     let submitPromise = null;
 
@@ -90,7 +87,8 @@ export class CadastroClienteComponent implements OnInit {
       submitPromise = this.clienteService.createCliente(this.clientForm.value);
     }
 
-    submitPromise.subscribe((cliente: ICliente) => {
+    submitPromise.then((cliente) => {
+      console.log(cliente)
       this.isLoading = false;
       this.resetClienteForm()
       this.isEdit = false;
@@ -118,7 +116,6 @@ export class CadastroClienteComponent implements OnInit {
 
   onBlurCEP(cep: string) {
     this.cepService.getEnderecoFromCEP(cep).subscribe((viaCEP: IViaCEP) => {
-      console.log(viaCEP);
       this.clientForm.patchValue({
         bairro: viaCEP.bairro,
         cidade: viaCEP.localidade,

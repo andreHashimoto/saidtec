@@ -27,7 +27,8 @@ export class ImpressaoNotaComponent implements OnInit {
 
   getClientes() {
     this.isLoading = true;
-    this.clienteService.getClientes().subscribe((clientes: ICliente[]) => {
+    this.clienteService.getClientes().subscribe((clientes: any) => {
+      console.log(clientes)
       this.clientes = clientes;
       this.isLoading = false;
     })
